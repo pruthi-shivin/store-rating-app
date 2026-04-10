@@ -12,6 +12,7 @@ function OwnerDashboard() {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   const fetchData = async () => {

@@ -19,6 +19,7 @@ const API_URL = "process.env.REACT_APP_API_URL;";
 
   useEffect(() => {
     fetchStores();
+    // eslint-disable-next-line
   }, []);
 
   const fetchStores = async () => {
@@ -48,7 +49,6 @@ const API_URL = "process.env.REACT_APP_API_URL;";
     fetchStores();
   } catch (error) {
     if (error.response?.data?.message.includes("already")) {
-      const existing = stores.find(s => s.id === storeId);
 
       await axios.put(
         `${API_URL}/api/ratings`,

@@ -33,7 +33,8 @@ function AdminDashboard() {
     fetchStats();
     fetchUsers();
     fetchStores();
-  }, [fetchUsers]);
+    // eslint-disable-next-line
+  }, []);
 
   const fetchStats = async () => {
     const res = await getDashboard();
