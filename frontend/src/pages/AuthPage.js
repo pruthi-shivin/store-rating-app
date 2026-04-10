@@ -20,7 +20,8 @@ function AuthPage() {
     });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       if (isSignup) {
         await signupUser(form);
