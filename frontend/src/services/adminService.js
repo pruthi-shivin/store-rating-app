@@ -9,24 +9,24 @@ const getAuthHeader = () => ({
 });
 
 export const getDashboard = () => {
-  return axios.get(`${API_URL}/dashboard`, getAuthHeader());
+  return axios.get(`${API_URL}/api/admin/dashboard`, getAuthHeader());
 };
 
 export const getUsers = (search = "", role = "") => {
   return axios.get(
-    `${API_URL}/users?search=${search}&role=${role}`,
+    `${API_URL}/api/admin/users?search=${search}&role=${role}`,
     getAuthHeader()
   );
 };
 
 export const createUser = (data) => {
-  return axios.post(`${API_URL}/create-user`, data, getAuthHeader());
+  return axios.post(`${API_URL}/api/admin/create-user`, data, getAuthHeader());
 };
 
 export const createStore = (data) => {
-  return axios.post(`${API_URL}/create-store`, data, getAuthHeader());
+  return axios.post(`${API_URL}/api/admin/create-store`, data, getAuthHeader());
 };
 
 export const getStores = () => {
-  return axios.get(`${API_URL}/stores`, getAuthHeader());
+  return axios.get(`${API_URL}/api/admin/stores`, getAuthHeader());
 };

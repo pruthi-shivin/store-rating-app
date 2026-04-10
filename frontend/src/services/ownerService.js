@@ -9,5 +9,5 @@ const getAuthHeader = () => ({
 });
 
 export const getOwnerDashboard = () => {
-  return axios.get(`${API_URL}/dashboard`, getAuthHeader());
+  return axios.get(`${API_URL}/api/owner/dashboard`, getAuthHeader());
 };
