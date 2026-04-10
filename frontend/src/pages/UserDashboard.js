@@ -15,7 +15,7 @@ function UserDashboard() {
   newPassword: "",
 });
 
-const API_URL = process.env.REACT_APP_API_URL || "https://store-rating-backend-tvce.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     fetchStores();
@@ -45,28 +45,46 @@ const API_URL = process.env.REACT_APP_API_URL || "https://store-rating-backend-t
       rating: rating[storeId],
     });
 
-    alert("Rating submitted/updated");
+    alert("Rating submitted");
     fetchStores();
-  } catch (error) {
-    if (error.response?.data?.message.includes("already")) {
 
-      await axios.put(
-        `${API_URL}/api/ratings`,
-        {
-            store_id: storeId,
-            rating: rating[storeId],
-        },
-        {
-            headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+  } catch (error) {
+    const msg = error.response?.data?.message || "";
+
+    if (msg.includes("already")) {
+      try {
+        const existing = stores.find(
+          (s) => s.id === storeId
+        )?.userRatingId;
+
+        if (!existing) {
+          alert("Rating not found");
+          return;
         }
+
+        await axios.put(
+          `${API_URL}/api/ratings/${existing}`, 
+          {
+            rating: rating[storeId],
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
         );
 
-      alert("Rating updated");
-      fetchStores();
+        alert("Rating updated");
+        fetchStores();
+
+      } catch (err) {
+        console.log(err);
+        alert("Update failed");
+      }
+
     } else {
-      alert("Error");
+      console.log(error);
+      alert("Error submitting rating");
     }
   }
 };

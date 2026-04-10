@@ -6,18 +6,24 @@ export const getAllStores = (req, res) => {
 
   let query = `
     SELECT 
-      s.id,
-      s.name,
-      s.address,
-      ROUND(AVG(r.rating),1) AS avg_rating,
-      (
-        SELECT rating 
-        FROM ratings 
-        WHERE user_id = ? AND store_id = s.id
-      ) AS user_rating
+    s.id,
+    s.name,
+    s.address,
+    ROUND(AVG(r.rating), 1) AS overallRating,
+
+    ur.rating AS userRating,
+    ur.id AS userRatingId
+
     FROM stores s
-    LEFT JOIN ratings r ON s.id = r.store_id
-  `;
+
+    LEFT JOIN ratings r 
+    ON s.id = r.store_id
+
+    LEFT JOIN ratings ur 
+    ON s.id = ur.store_id AND ur.user_id = ?
+
+    GROUP BY s.id
+    `;
 
   const values = [userId];
 
@@ -30,9 +36,12 @@ export const getAllStores = (req, res) => {
 
   query += " GROUP BY s.id";
 
-  db.query(query, values, (err, result) => {
-    if (err) return res.status(500).json({ error: err.message });
+  db.query(query, [userId], (err, result) => {
+  if (err) {
+    console.log(err);
+    return res.status(500).json({ error: err.message });
+  }
 
-    res.json(result);
-  });
-};
+  res.json(result);
+}
+);}
