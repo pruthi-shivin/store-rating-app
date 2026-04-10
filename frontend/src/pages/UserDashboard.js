@@ -4,6 +4,7 @@ import { submitRating } from "../services/ratingService";
 import axios from "axios";
 import { changePassword } from "../services/authService";
 
+
 function UserDashboard() {
   const [stores, setStores] = useState([]);
   const [rating, setRating] = useState({});
@@ -14,6 +15,7 @@ function UserDashboard() {
   newPassword: "",
 });
 
+const API_URL = "process.env.REACT_APP_API_URL;";
 
   useEffect(() => {
     fetchStores();
@@ -49,7 +51,7 @@ function UserDashboard() {
       const existing = stores.find(s => s.id === storeId);
 
       await axios.put(
-        "http://localhost:5000/api/ratings",
+        `${API_URL}/api/ratings`,
         {
             store_id: storeId,
             rating: rating[storeId],

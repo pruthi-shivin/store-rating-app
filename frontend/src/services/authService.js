@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "process.env.REACT_APP_API_URL;";
 
 export const signupUser = async (data) => {
   return axios.post(`${API_URL}/signup`, data);
@@ -12,7 +12,7 @@ export const loginUser = async (data) => {
 
 export const changePassword = (data) => {
   return axios.post(
-    "http://localhost:5000/api/auth/change-password",
+    `${API_URL}/api/auth/change-password`,
     data,
     {
       headers: {
