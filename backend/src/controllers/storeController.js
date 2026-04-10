@@ -4,13 +4,12 @@ export const getAllStores = (req, res) => {
   const userId = req.user.id;
   const { search = "" } = req.query;
 
-  let query = `
+  const query = `
     SELECT 
     s.id,
     s.name,
     s.address,
     ROUND(AVG(r.rating), 1) AS overallRating,
-
     ur.rating AS userRating,
     ur.id AS userRatingId
 
