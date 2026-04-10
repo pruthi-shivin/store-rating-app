@@ -33,7 +33,7 @@ function AdminDashboard() {
     fetchStats();
     fetchUsers();
     fetchStores();
-  }, []);
+  }, [fetchUsers]);
 
   const fetchStats = async () => {
     const res = await getDashboard();
@@ -158,7 +158,7 @@ function AdminDashboard() {
                 {user.owner_rating || "No ratings yet"}
             </p>
             )}
-            
+
           <hr />
         </div>
       ))}
