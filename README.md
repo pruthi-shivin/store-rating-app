@@ -60,7 +60,7 @@ A full-stack web application where users can browse stores and submit ratings. T
 
 ### 1) Clone the repository
 
-git clone https://github.com/your-username/store-rating-app.git ->
+git clone https://github.com/pruthi-shivin/store-rating-app ->
 cd store-rating-app 
 
 ### 2) Backend Setup
