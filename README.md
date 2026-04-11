@@ -81,23 +81,16 @@ run command: npm start
 ##### Install using: 
 
 cd backend
-
 npm install
 
 ##### Packages used:
 
 express
-
 mysql2
-
 cors
-
 dotenv
-
 bcryptjs
-
 jsonwebtoken
-
 nodemon
 
 
@@ -105,13 +98,10 @@ nodemon
 ##### Install using:
 
 cd frontend
-
 npm install
 
 ##### Packages used:
 
 react
-
 react-router-dom
-
 axios
