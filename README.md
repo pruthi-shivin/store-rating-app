@@ -52,7 +52,6 @@ A full-stack web application where users can browse stores and submit ratings. T
 - Rating system (1–5)
 - Update existing rating
 - Password update
-- Sorting & filtering (admin)
 
 ---
 
