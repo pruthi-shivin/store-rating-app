@@ -78,17 +78,26 @@ run command: npm start
 
 ### Dependencies:
 #### backend:
-######Install using: 
+##### Install using: 
+
 cd backend
+
 npm install
 
-######Packages used:
+##### Packages used:
+
 express
+
 mysql2
+
 cors
+
 dotenv
+
 bcryptjs
+
 jsonwebtoken
+
 nodemon
 
 
