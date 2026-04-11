@@ -64,13 +64,13 @@ git clone https://github.com/your-username/store-rating-app.git
 cd store-rating-app 
 
 ### 2) Backend Setup
-cd backend
+cd backend,
 npm install
 
 run command: npm run dev
 
 ### 3) Frontend Setup
-cd frontend
+cd frontend,
 npm install
 
 run command: npm start
@@ -80,28 +80,28 @@ run command: npm start
 #### backend:
 ##### Install using: 
 
-cd backend
+cd backend,
 npm install
 
 ##### Packages used:
 
-express
-mysql2
-cors
-dotenv
-bcryptjs
-jsonwebtoken
+express,
+mysql2,
+cors,
+dotenv,
+bcryptjs,
+jsonwebtoken,
 nodemon
 
 
 #### frontend:
 ##### Install using:
 
-cd frontend
+cd frontend,
 npm install
 
 ##### Packages used:
 
-react
-react-router-dom
+react,
+react-router-dom,
 axios
