@@ -93,11 +93,16 @@ nodemon
 
 
 #### frontend:
-######Install using:
+##### Install using:
+
 cd frontend
+
 npm install
 
-######Packages used:
+##### Packages used:
+
 react
+
 react-router-dom
+
 axios
