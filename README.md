@@ -35,7 +35,6 @@ A full-stack web application where users can browse stores and submit ratings. T
 - Signup & Login
 - Search stores
 - Submit & update ratings
-- Change password
 
 ### 3. Store Owner
 - View store ratings
