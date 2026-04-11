@@ -4,7 +4,7 @@ A full-stack web application where users can browse stores and submit ratings. T
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 ### Frontend
 - React.js
@@ -24,7 +24,7 @@ A full-stack web application where users can browse stores and submit ratings. T
 
 ---
 
-## 👥 User Roles
+## User Roles
 
 ### 1. Admin
 - View dashboard (users, stores, ratings)
@@ -44,7 +44,7 @@ A full-stack web application where users can browse stores and submit ratings. T
 
 ---
 
-## 🔐 Features
+## Features
 
 - JWT-based authentication
 - Role-based access control
@@ -56,10 +56,48 @@ A full-stack web application where users can browse stores and submit ratings. T
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
-### 1️⃣ Clone the repository
+### 1) Clone the repository
 
-```bash
 git clone https://github.com/your-username/store-rating-app.git
-cd store-rating-app
+cd store-rating-app 
+
+### 2) Backend Setup
+cd backend
+npm install
+
+run command: npm run dev
+
+### 3) Frontend Setup
+cd frontend
+npm install
+
+run command: npm start
+
+
+### Dependencies:
+## backend:
+#Install using: 
+cd backend
+npm install
+
+#Packages used:
+express
+mysql2
+cors
+dotenv
+bcryptjs
+jsonwebtoken
+nodemon
+
+
+## frontend:
+#Install using:
+cd frontend
+npm install
+
+#Packages used:
+react
+react-router-dom
+axios
