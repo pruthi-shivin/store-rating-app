@@ -77,12 +77,12 @@ run command: npm start
 
 
 ### Dependencies:
-## backend:
-#Install using: 
+#### backend:
+######Install using: 
 cd backend
 npm install
 
-#Packages used:
+######Packages used:
 express
 mysql2
 cors
@@ -92,12 +92,12 @@ jsonwebtoken
 nodemon
 
 
-## frontend:
-#Install using:
+#### frontend:
+######Install using:
 cd frontend
 npm install
 
-#Packages used:
+######Packages used:
 react
 react-router-dom
 axios
